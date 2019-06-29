@@ -1,0 +1,46 @@
+.localizador {
+  margin: 0 auto;
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  width: 50%;
+  border: 2px dashed #777;
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+}
+.localizador .localizador__title {
+  text-transform: uppercase;
+  padding: 10px;
+  color: #6a6a6a;
+}
+.localizador p {
+  color: black;
+}
+.localizador .localizador__button {
+  border-radius: 0.3rem;
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+  text-transform: uppercase;
+  border: 1px dashed gray;
+  padding: 2%;
+  margin: 1%;
+}
+.localizador .localizador__button:hover {
+  background-color: blue;
+}
+.localizador .localizador__mensagem {
+  font-weight: bold;
+}
+.localizador .localizador__mensagem--erro {
+  color: red !important;
+}
+.localizador .localizador__mensagem--sucesso {
+  color: green !important;
+}
+.localizador hr {
+  width: 50%;
+  margin: auto;
+}
+
+/*# sourceMappingURL=style.css.map */

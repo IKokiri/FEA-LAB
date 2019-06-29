@@ -1,41 +1,39 @@
-document.querySelector('#btn-localizacao').addEventListener('click', function (event) {
-    var titulo = document.getElementById('titulo');
-    var localizacao = document.getElementById('localizacao');         
+var sucesso = document.getElementById('sucesso');
+var error = document.getElementById('error');
+var latitudeS = document.getElementById('latitude');         
+var longitudeS = document.getElementById('longitude');  
 
+document.querySelector('#btn-localizacao').addEventListener('click', function (event) {
+    
+        
     if (navigator.geolocation) {
         /* geolocation is available */
-           navigator.geolocation.getCurrentPosition(showPosition);
-    } else {
-        /* geolocation IS NOT available */
-        navigator.geolocation.getCurrentPosition(showError);
+      
+           navigator.geolocation.getCurrentPosition(showPosition,showError);
     }
+    
 
     function showPosition(position){
-        titulo.innerHTML = "Você está localizando em: ";
-        var latitude = "Latitude: " + position.coords.latitude + " - ";
-        var longitude = "Longitude: " + position.coords.longitude;
         
-        titulo.innerHTML = "Você está localizando em: ";
-        localizacao.innerHTML = latitude + longitude;
+        sucesso.innerHTML = "Você está:";
+        latitudeS.innerHTML = "Latitude "+position.coords.latitude;
+        longitudeS.innerHTML = "Longitude "+position.coords.longitude;
+        error.innerHTML = "";
     }
 
-    function showError(error) {
-        var mensagem = "";
-        switch (error.code) {
-            case error.PERMISSION_DENIED:
-                mensagem = "User denied the request for Geolocation."
-                break;
-            case error.POSITION_UNAVAILABLE:
-                mensagem = "Location information is unavailable."
-                break;
-            case error.TIMEOUT:
-                mensagem = "The request to get user location timed out."
-                break;
-            case error.UNKNOWN_ERROR:
-                mensagem = "An unknown error occurred."
-                break;
-        }
-        titulo.innerHTML =  'Desculpe, não conseguimos localizá-lo. Motivo: ';
-        localizacao.innerHTML = mensagem;
+    function showError(){
+
+        navigator.permissions.query({name:'geolocation'}).then(function() {
+            error.innerHTML = "Para ter acesso, é necessário permitir 'Saber sua localização'!";
+            latitudeS.innerHTML = "";
+            longitudeS.innerHTML = "";
+            sucesso.innerHTML = "";
+
+    });
+          
+        
     }
+
+
+  
 });

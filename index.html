@@ -13,7 +13,7 @@
 
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
-
+  <link rel="stylesheet" href="css/style.css">
   <meta name="theme-color" content="#fafafa">
 </head>
 
@@ -23,13 +23,17 @@
   <![endif]-->
 
   <!-- Add your site or application content here -->
-  <h1>Encontre sua localização</h1>  
-  <button id="btn-localizacao">Try It</button>
-
-  <div>
-    <h2 id="titulo"></h2>
-    <p id="localizacao"></p>
+  <div class="localizador">
+    <h1 class="localizador__title">Localizador</h1>  
+    <button class="localizador__button" id="btn-localizacao">Localizar</button>
+    <hr>
+    <span id="error" class="localizador__mensagem localizador__mensagem--erro"></span>
+    <span id="sucesso" class="localizador__mensagem localizador__mensagem--sucesso"></span>
+    <p id="titulo"></p>
+    <p id="latitude"></p>
+    <p id="longitude"></p>
   </div>
+
 
 
   <script src="js/vendor/modernizr-3.7.1.min.js"></script>

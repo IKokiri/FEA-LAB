@@ -1,0 +1,52 @@
+$cor_principal: #777;
+
+@mixin title {
+    text-transform: uppercase;
+    padding:10px;
+}
+
+.localizador {
+    margin: 0 auto;
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    border: 2px dashed $cor_principal;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    .localizador__title {
+        @include title;
+        color: darken($cor_principal,5%);
+        
+    }
+    p {
+        color: black;
+    }
+
+    .localizador__button {
+        border-radius: .3rem;
+        color: #fff;
+        background-color: #007bff;
+        border-color: #007bff;
+        text-transform: uppercase;
+        border: 1px dashed gray;
+        padding: 2%;
+        margin: 1%;
+        &:hover {
+            background-color: blue;
+        }
+    }
+    .localizador__mensagem {
+        font-weight: bold;
+    }
+    .localizador__mensagem--erro {
+        color: red !important;
+    }
+    .localizador__mensagem--sucesso {
+        color: green !important;
+    }
+    hr {
+        width: 50%;
+        margin: auto;
+    }
+}
