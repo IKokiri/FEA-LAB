@@ -1,55 +1,63 @@
 var sucesso = document.getElementById('sucesso');
 var error = document.getElementById('error');
-var latitudeS = document.getElementById('latitude');         
+var latitudeS = document.getElementById('latitude');
 var longitudeS = document.getElementById('longitude');
 var endereco = document.getElementById('endereco');
 
-document.querySelector('#btn-localizacao').addEventListener('click', function (event) {
-    
-        
+document.querySelector('#btn-localizacao').addEventListener('click', function(event) {
+    sucesso.innerHTML = "";
+    endereco.innerHTML = "";
+    latitudeS.innerHTML = "";
+    longitudeS.innerHTML = "";
+    error.innerHTML = "";
+
     if (navigator.geolocation) {
         /* geolocation is available */
-      
-           navigator.geolocation.getCurrentPosition(showPosition,showError);
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
     }
+<<<<<<< HEAD:src/js/main.js
     
     async function showPosition(position){
         
+=======
+
+    async function showPosition(position) {
+>>>>>>> 5c053c6157f7f98c9866acbf321119e91f5ed239:js/main.js
         let lat = position.coords.latitude;
         let lon = position.coords.longitude;
 
-        sucesso.innerHTML = "Você está:";
-        latitudeS.innerHTML = "Latitude "+lat;
-        longitudeS.innerHTML = "Longitude "+lon;
+        sucesso.innerHTML = "Você está: ";
+        latitudeS.innerHTML = `Latitude ${lat}`;
+        longitudeS.innerHTML = `Longitude ${lon}`;
         error.innerHTML = "";
 
-        local = await buscarEndereco(lat,lon)
-        
+        local = await buscarEndereco(lat, lon)
+
         endereco.innerHTML = `Você está proximo de: ${local}`;
     }
 
-    function showError(){
-
-        navigator.permissions.query({name:'geolocation'}).then(function() {
+    function showError() {
+        navigator.permissions.query({ name: 'geolocation' }).then(function() {
             error.innerHTML = "Para ter acesso, é necessário permitir 'Saber sua localização'!";
             latitudeS.innerHTML = "";
             longitudeS.innerHTML = "";
             sucesso.innerHTML = "";
+<<<<<<< HEAD:src/js/main.js
 
     });
+=======
+        });
+>>>>>>> 5c053c6157f7f98c9866acbf321119e91f5ed239:js/main.js
     }
 
-    async function buscarEndereco(lat,lon){
+    async function buscarEndereco(lat, lon) {
         local = "";
-
         await fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lon}&key=AIzaSyBUkoTXt1bL6oLyPUFFdVQXVlJpxbW-jWQ`)
-        .then(function(response){
-            return response.json()
-        }).then(function(data){
-            local = data.results[0].formatted_address;
-        })
-
+            .then(function(response) {
+                return response.json()
+            }).then(function(data) {
+                local = data.results[0].formatted_address;
+            });
         return local;
     }
-    
-}); 
+});
