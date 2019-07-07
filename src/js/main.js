@@ -13,7 +13,6 @@ document.querySelector('#btn-localizacao').addEventListener('click', function (e
            navigator.geolocation.getCurrentPosition(showPosition,showError);
     }
     
-
     async function showPosition(position){
         
         let lat = position.coords.latitude;
@@ -38,10 +37,6 @@ document.querySelector('#btn-localizacao').addEventListener('click', function (e
             sucesso.innerHTML = "";
 
     });
-
-  
-          
-        
     }
 
     async function buscarEndereco(lat,lon){
