@@ -15,14 +15,9 @@ document.querySelector('#btn-localizacao').addEventListener('click', function(ev
         /* geolocation is available */
         navigator.geolocation.getCurrentPosition(showPosition, showError);
     }
-<<<<<<< HEAD:src/js/main.js
-    
-    async function showPosition(position){
-        
-=======
 
     async function showPosition(position) {
->>>>>>> 5c053c6157f7f98c9866acbf321119e91f5ed239:js/main.js
+
         let lat = position.coords.latitude;
         let lon = position.coords.longitude;
 
@@ -42,12 +37,8 @@ document.querySelector('#btn-localizacao').addEventListener('click', function(ev
             latitudeS.innerHTML = "";
             longitudeS.innerHTML = "";
             sucesso.innerHTML = "";
-<<<<<<< HEAD:src/js/main.js
 
-    });
-=======
         });
->>>>>>> 5c053c6157f7f98c9866acbf321119e91f5ed239:js/main.js
     }
 
     async function buscarEndereco(lat, lon) {
