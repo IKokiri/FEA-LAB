@@ -51,4 +51,9 @@ document.querySelector('#btn-localizacao').addEventListener('click', function(ev
             });
         return local;
     }
+
+
 });
+
+//acessibilidade
+document.getElementById("btn-localizacao").focus();

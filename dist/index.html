@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="pt-br">
 
 <head>
   <meta charset="utf-8">
@@ -22,14 +22,17 @@
   <!-- Add your site or application content here -->
   <div class="localizador">
     <h1 class="localizador__title">Localizador</h1>  
-    <button class="localizador__button" id="btn-localizacao">Localizar</button>
+    <button class="localizador__button" id="btn-localizacao" alt="botão que ativa busca de sua localização">Localizar</button>
     <hr>
-    <span id="error" class="localizador__mensagem localizador__mensagem--erro"></span>
-    <span id="sucesso" class="localizador__mensagem localizador__mensagem--sucesso"></span>
-    <p id="titulo"></p>
-    <p id="latitude"></p>
-    <p id="longitude"></p>
-    <p id="endereco"></p>
+    <div role="alert" arie-live="polite">
+      <span id="error" class="localizador__mensagem localizador__mensagem--erro"></span>
+      <span id="sucesso" class="localizador__mensagem localizador__mensagem--sucesso"></span>
+      <p id="titulo"></p>
+      <p id="latitude"></p>
+      <p id="longitude"></p>
+      <p id="endereco"></p>
+    </div>
+    
   </div>
 
 
